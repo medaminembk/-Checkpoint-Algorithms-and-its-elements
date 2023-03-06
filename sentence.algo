@@ -1,0 +1,22 @@
+ALGORITHM SENTENCE
+VAR
+   nbrv,nbrw,nbrc:= INTEGER ;
+   sentence:= STRING[] ;
+BEGIN
+  nbrc:= 0 ;
+  nbrw:= 1 ;
+  nbrv:= 0;
+  write("type the sentence")
+  read(sentence)
+REPEAT
+   IF (sentence[nbrc]=" ") THEN
+       nbrw:=nbrw+1 ;
+   END_IF
+  IF (sentence[nbrc] in ["a","e","u","i","o","y"]) THEN
+   nbrv:= nbrv +1 ;
+   END_IF
+   nbrc := nbrc+1 ;
+UNTIL (sentence[nbrc]=".")
+write( "The length of the sentence : ",nbrc+1 )
+write ("The number of words in the sentence : ",nbrw)
+write ("The number of vowels in the sentence : ",nbrv)
